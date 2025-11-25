@@ -1,5 +1,5 @@
-**Diabetic Retinopathy Classification Using Deep Learning
-**
+**Diabetic Retinopathy Classification Using Deep Learning**
+
 This project implements a deep learning–based system for binary classification of retinal images to detect the presence or absence of diabetic retinopathy.
 It includes a complete preprocessing pipeline, model training scripts, and an inference-ready application.
 
