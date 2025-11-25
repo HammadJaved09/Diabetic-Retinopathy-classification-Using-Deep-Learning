@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetic Retinopathy Screener</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+   <header style="text-align: center; padding: 10px; background-color: #f2f2f2;">
+    <img src="{{ url_for('static', filename='search.png') }}" alt="Logo" style="height: 80px;">
+    <h1>Diabetic Retinopathy Screener</h1>
+</header>
+    <!-- Main Content -->
+    <div class="container">
+        <form method="POST" action="/" enctype="multipart/form-data">
+            <label for="image">Upload Retina Image:</label><br>
+            <input type="file" name="image" id="image" accept="image/*" required><br><br>
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction %}
+            <h2>{{ prediction }}</h2>
+            <p><strong>Model Confidence:</strong> {{ confidence }}%</p>
+            <img src="{{ url_for('static', filename=image) }}" alt="Uploaded Image" style="max-width: 300px; margin-top: 20px;">
+        {% endif %}
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 15px; background-color: #f2f2f2; margin-top: 40px;">
+        <p>
+            This <strong>Diabetic Retinopathy Screener</strong> is completed <strong>Syed Hammad Javed (F21-0634)</strong> </p>
+    </footer>
+
+</body>
+</html>
